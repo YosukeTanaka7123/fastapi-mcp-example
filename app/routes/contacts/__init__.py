@@ -4,7 +4,7 @@ from tinydb.table import Document
 from typing import List
 
 from app.dependencies import SessionDep
-from app.models.contact import Contact
+from app.routes.contacts.schema import Contact
 
 router = APIRouter(tags=["contacts"])
 

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routes import contacts, linebot, openweather
+from app.routes import linebot, openweather, contacts
 from app.dependencies import SettingsDep
 
 # Create FastAPI app

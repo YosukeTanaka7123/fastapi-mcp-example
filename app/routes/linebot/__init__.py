@@ -3,8 +3,8 @@ from fastapi import APIRouter
 from linebot.v3.messaging import PushMessageRequest as LinePushMessageRequest
 
 from app.dependencies import LineApiClientDep
-from app.models.contact import Contact
 from app.routes.linebot.schema import (
+    UserProfileResponse,
     PushMessageRequest,
     PushMessageResponse,
     MessageQuotaResponse,
@@ -13,10 +13,10 @@ from app.routes.linebot.schema import (
 router = APIRouter(tags=["linebot"])
 
 
-@router.get("/linebot/profile/{user_id}", response_model=Contact)
+@router.get("/linebot/profile/{user_id}", response_model=UserProfileResponse)
 def get_profile(user_id: str, line_api_client: LineApiClientDep):
     response = line_api_client.get_profile(user_id)
-    return Contact(**response.dict())
+    return response.dict()
 
 
 @router.post(
