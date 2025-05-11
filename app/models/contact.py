@@ -8,8 +8,8 @@ class Contact(BaseModel):
     This model represents the profile information of a LINE user.
     """
 
-    displayName: str
-    userId: str
+    display_name: str
+    user_id: str
+    picture_url: Optional[str] = None
+    status_message: Optional[str] = None
     language: Optional[str] = None
-    pictureUrl: Optional[str] = None
-    statusMessage: Optional[str] = None
