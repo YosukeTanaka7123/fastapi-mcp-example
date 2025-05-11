@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routes import contacts, linebots
+from app.routes import contacts, linebot, openweather
 from app.dependencies import SettingsDep
 
 # Create FastAPI app
@@ -14,4 +14,5 @@ async def health(settings: SettingsDep):
 
 # Include routers
 app.include_router(contacts.router)
-app.include_router(linebots.router)
+app.include_router(linebot.router)
+app.include_router(openweather.router)
